@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='lambdata-pkutrich',
-    version='0.0.2',
+    version='0.0.3',
     author='Paul Kutrich',
     author_email='pkutrich@gmail.com',
     description='Some very basic DataFrame tools.',
