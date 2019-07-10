@@ -1,6 +1,7 @@
 from helper.add_column import AddColumn
 from helper.separate_date_parts import SeparateDateParts
 from helper.delete_columns import DeleteColumn
+from helper.display import DisplayOptions
 import pandas as pd
 
 # Make a DataFrame for testing.
@@ -21,3 +22,5 @@ print(df)
 
 df = DeleteColumn(df, 'nums').delete_column()
 print(df)
+
+DisplayOptions(max_columns=50)
