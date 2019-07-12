@@ -59,8 +59,8 @@ class BoxingGlove(Product):
 
     """
 
-    def __init__(self):
-        super().__init__(self.name)
+    def __init__(self, name):
+        super(BoxingGlove, self).__init__(name=name)
         self.weight = 10
 
     def explode(self):
