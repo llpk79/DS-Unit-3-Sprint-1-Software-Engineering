@@ -64,7 +64,6 @@ class BoxingGlove(Product):
                  price: int = 10,
                  weight: int = 10,
                  flammability: float = 0.5):
-        # self.weight = 10
         super(BoxingGlove, self).__init__(name=name,
                                           price=price,
                                           weight=weight,
@@ -80,7 +79,7 @@ class BoxingGlove(Product):
     def punch(self):
         """Calculate punch strength of glove.
 
-        :return:
+        :return: str
         """
         if self.weight > 5:
             return 'That tickles'
