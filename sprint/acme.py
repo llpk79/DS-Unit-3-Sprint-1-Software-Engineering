@@ -59,9 +59,16 @@ class BoxingGlove(Product):
 
     """
 
-    def __init__(self, name):
-        super(BoxingGlove, self).__init__(name=name)
-        self.weight = 10
+    def __init__(self,
+                 name: str,
+                 price: int = 10,
+                 weight: int = 10,
+                 flammability: float = 0.5):
+        # self.weight = 10
+        super(BoxingGlove, self).__init__(name=name,
+                                          price=price,
+                                          weight=weight,
+                                          flammability=flammability)
 
     def explode(self):
         """This product cannot explode.
