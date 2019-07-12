@@ -4,43 +4,39 @@ from fauna import Animal, Doggo, Iguana
 
 class TestAnimals(unittest.TestCase):
 
+    def setUp(self) -> None:
+        self.anim = Animal('Anim', 40)
+        self.dog = Doggo('Watson', 11)
+        self.lizi = Iguana('Lizi', 3)
+
     def test_init(self):
-        anim = Animal('Anim', 40)
-        self.assertTrue(isinstance(anim, Animal))
-        self.assertEqual(anim.name, 'Anim')
-        self.assertEqual(anim.age, 40)
+        self.assertTrue(isinstance(self.anim, Animal))
+        self.assertEqual(self.anim.name, 'Anim')
+        self.assertEqual(self.anim.age, 40)
 
     def test_move_up(self):
-        anim = Animal('Anim', 40)
-        self.assertEqual(anim.position, 0)
-        anim.move_up()
-        self.assertEqual(anim.position, 1)
+        self.assertEqual(self.anim.position, 0)
+        self.anim.move_up()
+        self.assertEqual(self.anim.position, 1)
 
     def test_move_down(self):
-        anim = Animal('Anim', 40)
-        self.assertEqual(anim.position, 0)
-        anim.move_down()
-        self.assertEqual(anim.position, -1)
+        self.assertEqual(self.anim.position, 0)
+        self.anim.move_down()
+        self.assertEqual(self.anim.position, -1)
 
     def test_speak(self):
-        dog = Doggo('Watson', 11)
-        self.assertEqual(dog.speak(), f'{dog.name} says "Woof"')
+        self.assertEqual(self.dog.speak(), f'{self.dog.name} says "Woof"')
 
     def test_hiss(self):
-        lizi = Iguana('Lizi', 3)
-        self.assertEqual(lizi.hiss(), f'{lizi.name} says "Hiss"')
+        self.assertEqual(self.lizi.hiss(), f'{self.lizi.name} says "Hiss"')
 
     def test_hair(self):
-        lizi = Iguana('Lizi', 3)
-        dog = Doggo('Watson', 11)
-        self.assertTrue(dog.hair)
-        self.assertFalse(lizi.hair)
+        self.assertTrue(self.dog.hair)
+        self.assertFalse(self.lizi.hair)
 
     def test_scales(self):
-        lizi = Iguana('Lizi', 3)
-        dog = Doggo('Watson', 11)
-        self.assertTrue(lizi.scales)
-        self.assertFalse(dog.scales)
+        self.assertTrue(self.lizi.scales)
+        self.assertFalse(self.dog.scales)
 
 
 if __name__ == "__main__":

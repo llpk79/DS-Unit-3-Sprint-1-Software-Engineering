@@ -43,7 +43,7 @@ class Human(Mammal):
     species = 'Homosapien'
 
     def speak(self):
-        print(f'My name is {self.name}, I am {self.age} years old')
+        return f'My name is {self.name}, I am {self.age} years old'
 
 
 class Doggo(Mammal):
