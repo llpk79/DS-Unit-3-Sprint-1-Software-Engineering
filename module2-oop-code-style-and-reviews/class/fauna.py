@@ -1,4 +1,15 @@
 class Animal:
+    """Base class for Animals.
+
+    Instance variables:
+    - name: str
+    - age: int
+    - position: 0
+
+
+    """
+    hair = None
+    scales = None
 
     def __init__(self, name, age):
         self.name = name
@@ -17,13 +28,14 @@ class Animal:
 class Mammal(Animal):
 
     hair = True
-    scales = False
+
+    def speak(self):
+        pass
 
 
 class Reptile(Animal):
 
     scales = True
-    hair = False
 
 
 class Human(Mammal):
@@ -39,12 +51,12 @@ class Doggo(Mammal):
     species = 'Canine'
 
     def speak(self):
-        print(f'{self.name} says "Woof"')
+        return f'{self.name} says "Woof"'
 
 
 class Iguana(Reptile):
 
-    species = 'Unknown'
+    species = 'Lizard'
 
-    def speak(self):
-        print(f'{self.name} says "Hiss"')
+    def hiss(self):
+        return f'{self.name} says "Hiss"'
